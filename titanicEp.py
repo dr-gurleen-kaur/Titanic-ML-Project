@@ -1,3 +1,4 @@
+#import library-panda, learn
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -6,6 +7,7 @@ from sklearn.metrics import accuracy_score
 #read dataset
 titanic_df=pd.read_csv("Titanic-Dataset.csv")
 print(titanic_df)
+
 print(titanic_df.info())  #dataset information
 
 rec=titanic_df.head(15)  #first 15 entries
@@ -25,6 +27,7 @@ indexAge=titanic_df[titanic_df['Age'].isnull()].index
 
 #titanic_df['Age']=titanic_df['Age'].fillna(titanic_df['Age'].mean())
 titanic_df.drop(indexAge,inplace=True)
+
 titanic_df.replace('male',0,inplace=True)
 titanic_df.replace('female',1,inplace=True)
 print(titanic_df.info())
